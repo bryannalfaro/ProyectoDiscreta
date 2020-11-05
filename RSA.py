@@ -17,7 +17,8 @@ print("$$ |  $$ | $$  /$$/  $$ |$$$$ |$$ |   __ $$$$$$$  |   $$$$/    $$$$$$$/  
 print("$$ \__$$ |  $$ $$/   $$ \__$$ |$$ \__/  |$$ |  $$ |    $$ |    $$ |         $$ |   ")
 print("$$    $$/    $$$/    $$    $$/ $$    $$/ $$ |  $$ |    $$ |    $$ |         $$ |   ")
 print(" $$$$$$/      $/      $$$$$$/   $$$$$$/  $$/   $$/     $$/     $$/          $$/    ")
-                                                                                   
+
+
                                                                                    
                                                                                    
 
@@ -56,6 +57,8 @@ while bandera:
     print("1. Encriptar")
     print("2. Desencriptar")
     print("3 Salir de ejecucion")
+    print("------------------------------------------------------")
+    print("")
     
     opcion = int(input())
     
@@ -70,8 +73,13 @@ while bandera:
         N = 143
         e= 13
         encriptadoM = encriptar(e,N, m)
+        print("")
+        print("----------------------------------------")
         print("Encriptacion: ",encriptadoM)
-        
+        print("----------------------------------------")
+        print("")
+
+
     
     elif(opcion==2):
         d = 37
@@ -80,7 +88,11 @@ while bandera:
         m2 = input("Ingrese el mensaje a desencriptar: ")
         llavePrivada = input("Ingrese la llave privada: ")
         desencriptadoM = desencriptar(d,N, m2)
+        print("")
+        print("---------------------------------")
         print("Desencriptacion: ",desencriptadoM)
+        print("---------------------------------")
+        print("")
     
     else:
         print("Gracias por confiar en nosotross")
