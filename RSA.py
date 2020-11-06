@@ -63,7 +63,7 @@ while bandera:
 
     print("RSA - UVG - CYPHER")
     #(e,n) #(d,n)
-    print("Tus llaves son: Publica 13, Privada 37 N = 143")
+    #print("Tus llaves son: Publica 13, Privada 37 N = 143")
     print("Escoge una opcion: ")
     print("1. Encriptar")
     print("2. Desencriptar")
@@ -77,7 +77,7 @@ while bandera:
     if(opcion==1):
         print("Encrypt process........")
         m = input("Mensaje: ")
-        llavePublica= input("Ingresa la llave publica: (e,n) ")
+        llavePublica= input("Ingresa la llave publica (e,n):  ")
         partes= llavePublica.split(",")
 
         '''
@@ -86,6 +86,11 @@ while bandera:
         d = 7
         N = 15
         e= 7'''
+        while(int(partes[1])<126):
+            print("Error")
+            llavePublica= input("Ingresa la llave publica (e,n):  ")
+            partes= llavePublica.split(",")
+        
         encriptadoM = encriptar(int(partes[0]),int(partes[1]), m)
         print("")
         print("----------------------------------------")
@@ -100,7 +105,13 @@ while bandera:
         print("Decrypt process......")
         m2 = input("Ingrese el mensaje a desencriptar: ")
         llavePrivada = input("Ingrese la llave privada (d,n): ")
+        
         partesPrivada = llavePrivada.split(",")
+        while(int(partesPrivada[1])<126):
+            print("Error")
+            llavePrivada= input("Ingresa la llave privada (d,n):  ")
+            partes= llavePublica.split(",")
+        
         desencriptadoM = desencriptar(int(partesPrivada[0]),int(partesPrivada[1]), m2)
         print("")
         print("---------------------------------")
