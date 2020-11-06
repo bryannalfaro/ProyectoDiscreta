@@ -25,6 +25,13 @@ print(" $$$$$$/      $/      $$$$$$/   $$$$$$/  $$/   $$/     $$/     $$/       
 
 bandera = True
 
+#Maximo comun divisor usando el Algoritmo de Euclides
+def mcd(a,b):
+    while b!=0:
+        a = a/b
+        b = a%b
+        
+    return a
 
 def encriptar(e, N, mensaje):
     llaveP = ""
@@ -59,6 +66,8 @@ while bandera:
     print("3 Salir de ejecucion")
     print("------------------------------------------------------")
     print("")
+
+    #print(mcd(5,3))
     
     opcion = int(input())
     
