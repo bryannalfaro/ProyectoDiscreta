@@ -28,8 +28,8 @@ bandera = True
 #Maximo comun divisor usando el Algoritmo de Euclides
 def mcd(a,b):
     while b!=0:
-        a = a/b
-        b = a%b
+        a = b  #Siguiente termino
+        b = a%b # b = residuo
         
     return a
 
@@ -67,7 +67,7 @@ while bandera:
     print("------------------------------------------------------")
     print("")
 
-    #print(mcd(5,3))
+    print(mcd(18,6))
     
     opcion = int(input())
     
