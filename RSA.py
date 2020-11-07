@@ -4,9 +4,15 @@ Bryann Alfaro
 Diego Arredondo
 Oscar Saravia
 
-Catedratico > Mario Castillo '''
+Catedratico: Mario Castillo '''
 
-
+'''
+Referencias:
+https://www.comparitech.com/blog/information-security/rsa-encryption/
+https://www.youtube.com/watch?v=4zahvcJ9glg
+https://www.youtube.com/watch?v=KS169C845aU
+https://www.di-mgt.com.au/rsa_alg.html
+'''
 
 print("__    __  __     __   ______    ______   _______   __      __  _______   ________ ")
 print("/  |  /  |/  |   /  | /      \  /      \ /       \ /  \    /  |/       \ /        |")
@@ -19,9 +25,6 @@ print("$$    $$/    $$$/    $$    $$/ $$    $$/ $$ |  $$ |    $$ |    $$ |      
 print(" $$$$$$/      $/      $$$$$$/   $$$$$$/  $$/   $$/     $$/     $$/          $$/    ")
 
 
-                                                                                   
-                                                                                   
-
 
 bandera = True
 '''
@@ -33,6 +36,7 @@ def mcd(a,b):
         
     return a'''
 
+#Encriptacion utilizando la formula : c = m^e%N
 def encriptar(e, N, mensaje):
     llaveP = ""
 
@@ -42,6 +46,7 @@ def encriptar(e, N, mensaje):
         llaveP += str(pow(m,e,N)) + " "
     return llaveP
 
+#Desencriptacion utilizando la formula : m = c^d%N
 def desencriptar(d, N, encriptado):
     mensajeDesencriptado = ""
 
@@ -75,10 +80,10 @@ while bandera:
     opcion = int(input())
     
     if(opcion==1):
-        print("Encrypt process........")
+        print("Encrypt process........\n")
         m = input("Mensaje: ")
-        llavePublica= input("Ingresa la llave publica (e,n):  ")
-        partes= llavePublica.split(",")
+        llavePublica= input("Ingresa la llave publica de la forma e,n:  ")
+
 
         '''
         p= 3
@@ -86,11 +91,21 @@ while bandera:
         d = 7
         N = 15
         e= 7'''
+        partes= llavePublica.split(",")
+       
+        
+        #Ingreso de ambos parametros
+        while(len(partes)==1):
+            print("Error")
+            llavePublica= input("Ingresa la llave publica de la forma e,n:  ")
+
+        #Valor minimo de n con base a tabla ASCII
         while(int(partes[1])<126):
             print("Error")
             llavePublica= input("Ingresa la llave publica (e,n):  ")
             partes= llavePublica.split(",")
         
+        #Llamado a la encriptacion
         encriptadoM = encriptar(int(partes[0]),int(partes[1]), m)
         print("")
         print("----------------------------------------")
@@ -99,19 +114,27 @@ while bandera:
         print("")
 
 
-    
     elif(opcion==2):
        
         print("Decrypt process......")
         m2 = input("Ingrese el mensaje a desencriptar: ")
-        llavePrivada = input("Ingrese la llave privada (d,n): ")
+        llavePrivada = input("Ingrese la llave privada de la forma d,n: ")
         
         partesPrivada = llavePrivada.split(",")
+
+        #Ingreso de ambos parametros
+        while(len(partesPrivada)==1):
+            print("Error")
+            llavePrivada= input("Ingresa la llave privada de la forma d,n:  ")
+
+        #Valor minimo de n con base a tabla ASCII
         while(int(partesPrivada[1])<126):
             print("Error")
             llavePrivada= input("Ingresa la llave privada (d,n):  ")
             partes= llavePublica.split(",")
         
+        
+        #Llamado a la desencriptacion
         desencriptadoM = desencriptar(int(partesPrivada[0]),int(partesPrivada[1]), m2)
         print("")
         print("---------------------------------")

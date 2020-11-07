@@ -1,0 +1,5 @@
+publica > 13,143
+privada > 37,143
+
+publica > 5,323
+privada > 173,323
