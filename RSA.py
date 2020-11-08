@@ -96,12 +96,13 @@ while bandera:
         
         #Ingreso de ambos parametros
         while(len(partes)==1):
-            print("Error")
+            print("Error, falta un parametro")
             llavePublica= input("Ingresa la llave publica de la forma e,n:  ")
+            partes= llavePublica.split(",")
 
         #Valor minimo de n con base a tabla ASCII
         while(int(partes[1])<126):
-            print("Error")
+            print("Error de longitud N")
             llavePublica= input("Ingresa la llave publica (e,n):  ")
             partes= llavePublica.split(",")
         
@@ -126,12 +127,13 @@ while bandera:
         while(len(partesPrivada)==1):
             print("Error")
             llavePrivada= input("Ingresa la llave privada de la forma d,n:  ")
+            partesPrivada = llavePrivada.split(",")
 
         #Valor minimo de n con base a tabla ASCII
         while(int(partesPrivada[1])<126):
             print("Error")
             llavePrivada= input("Ingresa la llave privada (d,n):  ")
-            partes= llavePublica.split(",")
+            partes= llavePrivada.split(",")
         
         
         #Llamado a la desencriptacion
