@@ -53,12 +53,12 @@ def desencriptar(d, N, encriptado):
     partes = encriptado.split()
     for j in partes:
         if j:
-            print(j)
+            
             c = int(j)
-            print(c)
+            
             
             mensajeDesencriptado += chr(pow(c,d,N))+ ""
-            print("l:",mensajeDesencriptado)
+            
             
             
     return mensajeDesencriptado
