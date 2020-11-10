@@ -25,16 +25,7 @@ print("$$    $$/    $$$/    $$    $$/ $$    $$/ $$ |  $$ |    $$ |    $$ |      
 print(" $$$$$$/      $/      $$$$$$/   $$$$$$/  $$/   $$/     $$/     $$/          $$/    ")
 
 
-
 bandera = True
-'''
-#Maximo comun divisor usando el Algoritmo de Euclides
-def mcd(a,b):
-    while b!=0:
-        a = b  #Siguiente termino
-        b = a%b # b = residuo
-        
-    return a'''
 
 #Encriptacion utilizando la formula : c = m^e%N
 def encriptar(e, N, mensaje):
@@ -67,8 +58,9 @@ def desencriptar(d, N, encriptado):
 while bandera:
 
     print("RSA - UVG - CYPHER")
-    #(e,n) #(d,n)
-    #print("Tus llaves son: Publica 13, Privada 37 N = 143")
+    print("Te recomendamos esta llave: ")
+    print("Llave publica: 5,82919")
+    print("Llave privada: 16469,82919")
     print("Escoge una opcion: ")
     print("1. Encriptar")
     print("2. Desencriptar")
@@ -85,14 +77,7 @@ while bandera:
         llavePublica= input("Ingresa la llave publica de la forma e,n:  ")
 
 
-        '''
-        p= 3
-        q = 5
-        d = 7
-        N = 15
-        e= 7'''
         partes= llavePublica.split(",")
-       
         
         #Ingreso de ambos parametros
         while(len(partes)==1):
