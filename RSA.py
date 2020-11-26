@@ -29,13 +29,13 @@ bandera = True
 
 #Encriptacion utilizando la formula : c = m^e%N
 def encriptar(e, N, mensaje):
-    llaveP = ""
+    llavePMensaje = ""
 
     for i in mensaje:
         m = ord(i)
         
-        llaveP += str(pow(m,e,N)) + " "
-    return llaveP
+        llavePMensaje += str(pow(m,e,N)) + " "
+    return llavePMensaje
 
 #Desencriptacion utilizando la formula : m = c^d%N
 def desencriptar(d, N, encriptado):
@@ -44,14 +44,8 @@ def desencriptar(d, N, encriptado):
     partes = encriptado.split()
     for j in partes:
         if j:
-            
             c = int(j)
-            
-            
             mensajeDesencriptado += chr(pow(c,d,N))+ ""
-            
-            
-            
     return mensajeDesencriptado
 
 
